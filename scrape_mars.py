@@ -190,7 +190,7 @@ def scrape():
         hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
     
 # Display hemisphere_image_urls
-    hemisphere_image_urls
+        hemisphere_image_urls
 
 
     # Store data in a dictionary

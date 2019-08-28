@@ -147,50 +147,50 @@ def scrape():
 
 # MARS HEMISPHERES
 
-# Visit hemispheres website 
-    hemispheres_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
-    browser.visit(hemispheres_url)
+# # Visit hemispheres website 
+#     hemispheres_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+#     browser.visit(hemispheres_url)
 
-# HTML Object
-    html_hemispheres = browser.html
+# # HTML Object
+#     html_hemispheres = browser.html
 
-# Parse HTML with Beautiful Soup
-    soup = BeautifulSoup(html_hemispheres, 'html.parser')
+# # Parse HTML with Beautiful Soup
+#     soup = BeautifulSoup(html_hemispheres, 'html.parser')
 
-# Retreive all items that contain mars hemispheres information
-    items = soup.find_all('div', class_='item')
+# # Retreive all items that contain mars hemispheres information
+#     items = soup.find_all('div', class_='item')
 
-# Create empty list for hemisphere urls 
-    hemisphere_image_urls = []
+# # Create empty list for hemisphere urls 
+#     hemisphere_image_urls = []
 
-# Store the main_ul 
-    hemispheres_main_url = 'https://astrogeology.usgs.gov'
+# # Store the main_ul 
+#     hemispheres_main_url = 'https://astrogeology.usgs.gov'
 
-# Loop through the items previously stored
-    for i in items: 
-    # Store title
-        title = i.find('h3').text
+# # Loop through the items previously stored
+#     for i in items: 
+#     # Store title
+#         title = i.find('h3').text
     
-    # Store link that leads to full image website
-        partial_img_url = i.find('a', class_='itemLink product-item')['href']
+#     # Store link that leads to full image website
+#         partial_img_url = i.find('a', class_='itemLink product-item')['href']
     
-    # Visit the link that contains the full image website 
-        browser.visit(hemispheres_main_url + partial_img_url)
+#     # Visit the link that contains the full image website 
+#         browser.visit(hemispheres_main_url + partial_img_url)
     
-    # HTML Object of individual hemisphere information website 
-        partial_img_html = browser.html
+#     # HTML Object of individual hemisphere information website 
+#         partial_img_html = browser.html
     
-    # Parse HTML with Beautiful Soup for every individual hemisphere information website 
-        soup = BeautifulSoup( partial_img_html, 'html.parser')
+#     # Parse HTML with Beautiful Soup for every individual hemisphere information website 
+#         soup = BeautifulSoup( partial_img_html, 'html.parser')
     
-    # Retrieve full image source 
-        img_url = hemispheres_main_url + soup.find('img', class_='wide-image')['src']
+#     # Retrieve full image source 
+#         img_url = hemispheres_main_url + soup.find('img', class_='wide-image')['src']
     
-    # Append the retreived information into a list of dictionaries 
-        hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
+#     # Append the retreived information into a list of dictionaries 
+#         hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
     
-# Display hemisphere_image_urls
-    hemisphere_image_urls
+# # Display hemisphere_image_urls
+#         hemisphere_image_urls
 
 
     # Store data in a dictionary
@@ -199,9 +199,8 @@ def scrape():
         "Latest News": news_p,
         "Featured Image": featured_image_url,
         "Weather": weather_tweet,
-        "Featured Image URL": featured_image_url,
         "Mars Facts": mars_html_table,
-        "Hemisphere Image URLs": hemisphere_image_urls
+#         "Hemisphere Image URLs": hemisphere_image_urls
         
     }
 
