@@ -18,7 +18,7 @@ def home():
     print(str(mars_data))
 
     # Return template and data
-    return render_template("index.html", mars=mars_data)
+    return render_template("index.html", data=mars_data)
 
 
 # Route that will trigger the scrape function

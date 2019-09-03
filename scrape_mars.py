@@ -72,7 +72,7 @@ def scrape():
     main_url = 'https://www.jpl.nasa.gov'
 
 # Concatenate website url with scrapped route
-    featured_image_url = main_url + img_url
+    featured_image_url = img_url
 
 # Display full link to featured image
     print(img_url)

@@ -32,11 +32,9 @@
 
 
 
-    {% for data in mars %} 
-
     <div class="container-fluid">
-        <h2>{{data.news_title}}</h2>
-        <p>{{data.news_p}}</p>
+        <h2>{{data["Latest News Headline"]}}</h2>
+        <p>{{data["Latest News"]}}</p>
     </div>
 
     <div class="container-fluid">
@@ -44,27 +42,32 @@
             <div class="col-md-7">
                 <h3>Featured Image</h3>
                 
-                <img src="{{data.featured_image_url}}" alt="featured image" style="width: 80%;">
+                <img src="{{data['Featured Image']}}" alt="featured image" style="width: 80%;">
             </div>
 
             <div class="col-md-5">
                 <ul>
                     <h3>Current Mars Weather</h3>
-                    {{data.weather_tweet}}
+                    {{data['Weather']}}
                 </ul>
 
 
                 <ul>
                     <h3>Mars Facts</h3>
-                    {{data.mars_html_table|safe}}
-                    <a href="{{data.mars_facts_table}}"></a>
+                    {{data['Mars Facts']}}
+                    <a href="{{data['Mars Facts']}}"></a>
                 </ul>
 
                 <div class="col-md-7">
                   <h3>Mars Hemispheres</h3>
                   
-                  <img src="{{data.hemisphere_image_urls}}" alt="Hemisphere Image URLs" style="width: 80%;">
-              </div>
+                  {% for d in data %}
+
+                  <img src="{{data['Hemisphere Image URLs']}}" alt="Hemisphere Image URLs" style="width: 80%;">
+
+                  {% endfor %}
+
+                </div>
 
 
 
@@ -74,7 +77,7 @@
 
                                           -->
 
-    {% endfor %}
+
 
 
 
