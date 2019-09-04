@@ -22,17 +22,18 @@
         
 
         <p align="Center">
-            <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Scrape New Data</a>
         </p>
     </div>
-
+    <div class="page-header">
+        <h1>Latest Mars News</h1>
+    </div>
 </div>  
 
 
 
     <div class="container-fluid">
-        <h1>Latest Mars News</h1>
-        <h3>{{data["Latest News Headline"]}}</h2>
+        <h2>{{data["Latest News Headline"]}}</h2>
         <p>{{data["Latest News"]}}</p>
     </div>
 
@@ -50,7 +51,6 @@
                     {{data['Weather']}}
                 </ul>
 
-                <br>
 
                 <ul>
                     <h3>Mars Facts</h3>
@@ -67,9 +67,6 @@
 
                   {% endfor %}
 
-
-
-                  
                 </div>
 
 

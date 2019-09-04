@@ -141,7 +141,7 @@ def scrape():
 
 # Use Pandas to convert the data to a HTML table string.
     mars_html_table = mars_df1.to_html()
-    mars_html_table = mars_html_table.replace("\n", "")
+    # mars_html_table = mars_html_table.replace("\n", "")
     mars_html_table
 
 
