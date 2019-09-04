@@ -38,13 +38,13 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-5">
                 <h3>Featured Image</h3>
                 
                 <img src="{{data['Featured Image']}}" alt="featured image" style="width: 80%;">
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-7">
                 <ul>
                     <h3>Current Mars Weather</h3>
                     {{data['Weather']}}
@@ -55,21 +55,19 @@
                 <ul>
                     <h3>Mars Facts</h3>
                     {{data['Mars Facts']}}
-                    <a href="{{data['Mars Facts']}}"></a>
+                    <a href="{{data['Mars Facts'|safe]}}"></a>
                 </ul>
 
-                <div class="col-md-7">
-                  <h3>Mars Hemispheres</h3>
+                <br>
+
+                <h3>Mars Hemispheres</h3>
                   
-                  {% for d in data %}
+                {% for d in data['Hemisphere Image URLs'] %}
 
-                  <img src="{{data['Hemisphere Image URLs']}}" alt="Hemisphere Image URLs" style="width: 80%;">
+                <img src="{{data['Hemisphere Image URLs']}}" alt="Hemisphere Image URLs" style="width: 80%;">
 
-                  {% endfor %}
+                {% endfor %}
 
-
-
-                  
                 </div>
 
 
@@ -77,35 +75,6 @@
             </div>
         </div>                 
     </div>
-
-                                          -->
-
-
-
-
-
-            </div>
-
-        </div>
-
-        </div>
-
-
-
-    </div>
-
-    
-         
-
-                 
-
-</div>
-
-
-
-</div>
-
-
 
 
 </body>
