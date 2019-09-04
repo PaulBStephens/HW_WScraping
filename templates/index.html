@@ -117,7 +117,7 @@
 
                 <h3>Mars Hemispheres</h3>
                 {% for d in data['Hemisphere Image URLs'] %}
-                <img src="{{data['Hemisphere Image URLs']}}" alt="Hemisphere Image URLs" style="width: 80%;">
+                <img src="{{d['img_url']}}" title="{{d['title']}}" alt="Hemisphere Image URLs" style="width: 80%;">
                 {% endfor %}
 
                 </div>
