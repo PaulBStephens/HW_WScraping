@@ -131,18 +131,12 @@ def scrape():
 # Set the index to the `Description` column without row indexing
     mars_df1.set_index('Facts', inplace=True)
 
-# Save html code to folder Assets
-    mars_df1.to_html()
-
-    data = mars_df1.to_dict(orient='records')  # Here's our added param..
-
-# Display mars_df
-#     mars_df1
 
 # Use Pandas to convert the data to a HTML table string.
     mars_html_table = mars_df1.to_html()
-    # mars_html_table = mars_html_table.replace("\n", "")
     mars_html_table
+    mars_html_table.replace("\n", "")
+    mars_df1.to_html('mars_html_table.html')
 
 
 # MARS HEMISPHERES
